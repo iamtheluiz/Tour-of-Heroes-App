@@ -1,10 +1,24 @@
-<!-- Usa um "pipe" para formatar a string (https://angular.io/guide/pipes) -->
-<h2>{{hero.name | uppercase}} Details</h2>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- Exibe todos os heróis dentro de "heroes" -->
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
 
-<div><span>id: </span>{{hero.id}}</div>
-<div>
-  <label>name:
-    <!-- "[(ngModel)]" permite que, ao valor ser alterado no site, a variável seja atualizada -->
-    <input [(ngModel)]="hero.name" placeholder="name"/>
-  </label>
+<!-- Seção de Detalhes -->
+
+<!-- Verifica se existe um herói selecionado -->
+<div *ngIf="selectedHero">
+  <!-- Usa um "pipe" para formatar a string (https://angular.io/guide/pipes) -->
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <!-- "[(ngModel)]" permite que, ao valor ser alterado no site, a variável seja atualizada -->
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </label>
+  </div>
 </div>

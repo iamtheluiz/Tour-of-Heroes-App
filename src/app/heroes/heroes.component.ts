@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// Importa a classe "Hero"
 import { Hero } from '../hero';
+
+// Lista de Heróis
+import { HEROES } from '../mock-heroes';
 
 // Metadata do Componente
 @Component({
@@ -12,15 +14,18 @@ import { Hero } from '../hero';
 
 export class HeroesComponent implements OnInit {
   // Propriedades
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };  // Define que a propriedade "hero" será do tipo "Hero"
+  selectedHero: Hero;
+  heroes = HEROES;
 
   constructor() { }
 
   ngOnInit() {
     // Chamado quando o componente inicia
+  }
+
+  // Quando selecionar um herói
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 
 }
