@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 
 // Lista de Heróis
-import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service';
 
 // Metadata do Componente
 @Component({
@@ -15,12 +15,19 @@ import { HEROES } from '../mock-heroes';
 export class HeroesComponent implements OnInit {
   // Propriedades
   selectedHero: Hero;
-  heroes = HEROES;
+  heroes: Hero[];
 
-  constructor() { }
+  constructor(private heroService: HeroService) {
+  }
 
   ngOnInit() {
     // Chamado quando o componente inicia
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   // Quando selecionar um herói
