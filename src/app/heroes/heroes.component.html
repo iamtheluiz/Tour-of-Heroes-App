@@ -8,17 +8,4 @@
   </li>
 </ul>
 
-<!-- Seção de Detalhes -->
-
-<!-- Verifica se existe um herói selecionado -->
-<div *ngIf="selectedHero">
-  <!-- Usa um "pipe" para formatar a string (https://angular.io/guide/pipes) -->
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <!-- "[(ngModel)]" permite que, ao valor ser alterado no site, a variável seja atualizada -->
-      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-    </label>
-  </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
