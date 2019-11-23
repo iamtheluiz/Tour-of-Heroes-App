@@ -1,12 +1,18 @@
-<button (click)="goBack()">go back</button>
+<button (click)="goBack()">&#8617; Go Back</button>
 <div *ngIf="hero">
   <!-- Usa um "pipe" para formatar a string (https://angular.io/guide/pipes) -->
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
   <div>
-    <label>name:
+    <label>
+      <span>ID:</span><br>
+      <input type="text" disabled [(ngModel)]="hero.id">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Name:</span><br>
       <!-- "[(ngModel)]" permite que, ao valor ser alterado no site, a variável seja atualizada -->
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="hero.name" type="text" placeholder="name"/>
     </label>
   </div>
 </div>

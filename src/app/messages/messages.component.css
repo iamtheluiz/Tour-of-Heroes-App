@@ -1,0 +1,9 @@
+button.clear {
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 5px;
+  color: #3f525c;
+  border: 2px solid #3f525c;
+  background-color: #eee;
+  border-radius: 5px;
+}

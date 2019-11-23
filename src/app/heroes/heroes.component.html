@@ -1,11 +1,9 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
   <!-- Exibe todos os heróis dentro de "heroes" -->
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
+  <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+    <li>
       <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-  </li>
+    </li>
+  </a>
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
