@@ -28,6 +28,10 @@
   background-color: #BBD8DC;
   color: white;
 }
+.heroes li a {
+  text-decoration: none;
+  color: black;
+}
 .heroes .badge {
   display: inline-block;
   font-size: small;

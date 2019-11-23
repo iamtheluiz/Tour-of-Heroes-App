@@ -5,6 +5,9 @@ div.grid {
   flex-wrap: wrap;
   justify-content: center;
 }
+div.grid a {
+  text-decoration: none !important;
+}
 div.module {
   padding: 5px;
   margin: 5px;
